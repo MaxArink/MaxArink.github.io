@@ -5,7 +5,12 @@ body {
     margin: 0;
     font-family: 'Comic Sans MS', cursive;
     font-size: medium;
-    background-color: rgb(105, 105, 105);
+    background-color: #013A6B;
+    background-image: -webkit-linear-gradient(30deg, #013A6B 30%, #004E95 10%);
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: bold;
 }
 
 header {
@@ -16,6 +21,7 @@ header {
     text-align: center;
     padding: 2% 0;
 }
+
 img {
     width: 100%;
     height: 50%;
@@ -45,4 +51,31 @@ img {
 
 #back-to-top-btn:active  {
     background-color: rgba(128, 128, 128, 0.6);
+}
+
+#skillstext{
+    color: white;
+    background-color: #34ADFF;
+    background-image: -webkit-linear-gradient(135deg, #34ADFF 35%,#4CBFFF 35%);
+}
+
+#projectstext{
+    color: white;
+    background-color: #34ADFF;
+    background-image: -webkit-linear-gradient(45deg, #34ADFF 35%,#4CBFFF 35%);
+}
+
+#languageOne {
+    background-color: #8cd1ff;
+    background-image: -webkit-linear-gradient(120deg, #ceebff 45%,#83cbf1 35%);
+}
+
+#languageTwo {
+    background-color: #94df82;
+    background-image: -webkit-linear-gradient(240deg, #80e26c 55%,#cdf5c3 35%);
+}
+
+#project {
+    background-color: #dee7ec;
+    background-image: -webkit-linear-gradient(50deg, #dee7ec 35%,#ececec 35%);
 }
