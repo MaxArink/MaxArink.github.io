@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     height: 100%;
     margin: 0;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Arial', cursive;
     font-size: medium;
     background-color: #013A6B;
     background-image: -webkit-linear-gradient(30deg, #013A6B 30%, #004E95 10%);
