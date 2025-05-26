@@ -115,3 +115,8 @@ header {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 }
+
+#skills, #projects, #contact {
+    margin-bottom: 6rem; /* meer ruimte tussen secties */
+    padding-top: 4rem;   /* ruimte boven secties */
+}
