@@ -64,7 +64,6 @@ header {
 /* Tussenkoppen skills/projects */
 #skillstext,
 #projectstext {
-    color: white;
     background-image: linear-gradient(135deg, #34ADFF 65%, #4CBFFF 35%);
     border-radius: 2rem;
 }
