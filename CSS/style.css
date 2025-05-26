@@ -119,8 +119,7 @@ header {
 
 /* Ruimte tussen secties */
 #skills,
-#projects,
-#contact {
+#projects {
     margin-bottom: 6rem;  /* meer ruimte tussen secties */
     padding-top: 4rem;    /* ruimte boven secties */
 }
