@@ -71,8 +71,10 @@ header {
 
 /* Talen-secties */
 #languageOne {
+    background-color: #e0f5ff; /* lichte blauwe basis */
     background-image: linear-gradient(120deg, #ceebff 45%, #83cbf1 55%);
 }
+
 
 #languageTwo {
     background-image: linear-gradient(240deg, #80e26c 55%, #cdf5c3 45%);
