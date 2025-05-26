@@ -1,29 +1,32 @@
+// Smooth scroll voor interne links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault()
+        e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        })
-    })
-})
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
 
-// Scroll to top button functionality
-window.onscroll = function () {
-    scrollFunction();
-
-}
-
-function scrollFunction() {
-    var btn = document.getElementById("back-to-top-btn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+// Toon/verberg 'Scroll to top'-knop op scroll
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById("back-to-top-btn");
+    if (window.scrollY > 200) {
         btn.style.display = "block";
     } else {
         btn.style.display = "none";
     }
-}
+});
 
+// Scroll naar boven bij klikken
 function scrollToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
