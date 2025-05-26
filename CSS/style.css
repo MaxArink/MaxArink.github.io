@@ -29,9 +29,13 @@ header {
 
 /* Afbeeldingen in cards */
 .card-img-top {
-    height: 200px;
-    object-fit: cover;
+    height: 180px;          /* vaste hoogte, pas aan naar wens */
+    object-fit: cover;      /* vult en snijdt netjes bij */
+    width: 100%;            /* altijd volledige breedte van de kaart */
+    border-top-left-radius: 0.5rem; /* dezelfde border radius als kaart */
+    border-top-right-radius: 0.5rem;
 }
+
 
 /* Terug naar boven knop */
 #back-to-top-btn {
@@ -103,4 +107,11 @@ header {
 #contact .bi:hover {
     transform: scale(1.2);
     color: #34ADFF;
+}
+.project-card img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
