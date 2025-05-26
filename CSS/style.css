@@ -1,81 +1,106 @@
+/* Algemene layout */
 body {
     display: flex;
     flex-direction: column;
     height: 100%;
     margin: 0;
-    font-family: 'Comic Sans MS', cursive;
-    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
     background-color: #013A6B;
-    background-image: -webkit-linear-gradient(30deg, #013A6B 30%, #004E95 10%);
+    background-image: linear-gradient(30deg, #013A6B 30%, #004E95 10%);
+    color: #fff;
 }
 
-h1, h2, h3, h4, h5{
+/* Koppen */
+h1, h2, h3, h4, h5 {
     font-weight: bold;
 }
 
+/* Header */
 header {
     background-image: url('../Images/image.jpg');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 2% 0;
+    padding: 3rem 1rem;
+    border-bottom: 3px solid black;
 }
 
-img {
-    width: 100%;
-    height: 50%;
+/* Afbeeldingen in cards */
+.card-img-top {
+    height: 200px;
     object-fit: cover;
 }
 
+/* Terug naar boven knop */
 #back-to-top-btn {
     display: none;
     position: fixed;
     bottom: 2%;
-    right: 1%;
+    right: 2%;
     z-index: 99;
-    font-size: 200%;
-    border: none;
-    outline: none;
-    background-color: rgba(14, 134, 231, 0.6);
+    font-size: 1.5rem;
+    background-color: rgba(14, 134, 231, 0.8);
     color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0.8rem 1rem;
     cursor: pointer;
-    padding-top: 1.8%;
-    padding-bottom: 1.8%;
-    padding-left: 1%;
-    padding-right: 1%;
-    margin: 2%;
-    border-style:inherit;
-    border-radius: 40%;
+    transition: background-color 0.3s ease;
 }
 
-#back-to-top-btn:active  {
+#back-to-top-btn:hover {
+    background-color: rgba(14, 134, 231, 1);
+}
+
+#back-to-top-btn:active {
     background-color: rgba(128, 128, 128, 0.6);
 }
 
-#skillstext{
+/* Tussenkoppen skills/projects */
+#skillstext,
+#projectstext {
     color: white;
-    background-color: #34ADFF;
-    background-image: -webkit-linear-gradient(135deg, #34ADFF 35%,#4CBFFF 35%);
+    background-image: linear-gradient(135deg, #34ADFF 35%, #4CBFFF 65%);
+    border-radius: 2rem;
 }
 
-#projectstext{
-    color: white;
-    background-color: #34ADFF;
-    background-image: -webkit-linear-gradient(45deg, #34ADFF 35%,#4CBFFF 35%);
-}
-
+/* Talen-secties */
 #languageOne {
-    background-color: #8cd1ff;
-    background-image: -webkit-linear-gradient(120deg, #ceebff 45%,#83cbf1 35%);
+    background-image: linear-gradient(120deg, #ceebff 45%, #83cbf1 55%);
 }
 
 #languageTwo {
-    background-color: #94df82;
-    background-image: -webkit-linear-gradient(240deg, #80e26c 55%,#cdf5c3 35%);
+    background-image: linear-gradient(240deg, #80e26c 55%, #cdf5c3 45%);
 }
 
-#project {
-    background-color: #dee7ec;
-    background-image: -webkit-linear-gradient(50deg, #dee7ec 35%,#ececec 35%);
+/* Project card */
+.card {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-title {
+    min-height: 3rem;
+}
+
+.card .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact icons */
+#contact .bi {
+    transition: transform 0.2s ease;
+}
+
+#contact .bi:hover {
+    transform: scale(1.2);
+    color: #34ADFF;
 }
