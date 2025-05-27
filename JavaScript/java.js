@@ -13,6 +13,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+  new bootstrap.Tooltip(el);
+});
+
 // Toon/verberg 'Scroll to top'-knop op scroll
 window.addEventListener('scroll', () => {
     const btn = document.getElementById("back-to-top-btn");
@@ -30,7 +34,3 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
-
-document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
-  new bootstrap.Tooltip(el);
-});
