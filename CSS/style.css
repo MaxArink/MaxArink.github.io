@@ -123,7 +123,7 @@ header {
 #skills,
 #projects {
     
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     margin-bottom: 6rem;  /* meer ruimte tussen secties */
     padding-top: 4rem;    /* ruimte boven secties */
 }
