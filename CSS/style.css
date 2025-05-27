@@ -107,7 +107,10 @@ header {
 
 #skills,
 #projects {
-
+    max-width: 1200px;   /* Limiteert maximale breedte */
+    margin: 0 auto;      /* Centreert de container horizontaal */
+    width: 100%;         /* Laat het wel op kleinere schermen meegroeien */
+    padding: 2rem 1rem;  /* Wat binnenruimte */
     margin-bottom: 6rem;
     padding-top: 4rem;
 }
