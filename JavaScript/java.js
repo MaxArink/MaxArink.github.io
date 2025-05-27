@@ -1,4 +1,3 @@
-// Smooth scroll voor interne links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -13,11 +12,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
-  new bootstrap.Tooltip(el);
-});
-
-// Toon/verberg 'Scroll to top'-knop op scroll
 window.addEventListener('scroll', () => {
     const btn = document.getElementById("back-to-top-btn");
     if (window.scrollY > 200) {
@@ -27,7 +21,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Scroll naar boven bij klikken
 function scrollToTop() {
     window.scrollTo({
         top: 0,
