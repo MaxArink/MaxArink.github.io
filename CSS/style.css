@@ -110,3 +110,7 @@ header {
     margin-bottom: 6rem;
     padding-top: 4rem;
 }
+
+.dropdown {
+    position: relative;
+}
