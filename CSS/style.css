@@ -70,7 +70,7 @@ header {
 
 /* Talen-secties */
 #languageOne {
-    background-image: linear-gradient(120deg, #ceebff 55%, #83cbf1 45%);
+    background-image: linear-gradient(120deg, #83cbf1 55%, #ceebff 45%);
 }
 
 
@@ -120,6 +120,8 @@ header {
 /* Ruimte tussen secties */
 #skills,
 #projects {
+    background-image: linear-gradient(135deg, #34ADFF 65%, #4CBFFF 35%);
+    border-radius: 2rem;
     margin-bottom: 6rem;  /* meer ruimte tussen secties */
     padding-top: 4rem;    /* ruimte boven secties */
 }
