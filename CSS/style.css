@@ -107,10 +107,18 @@ header {
 
 #skills,
 #projects {
+
     margin-bottom: 6rem;
     padding-top: 4rem;
 }
 
 .dropdown {
     position: relative;
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
