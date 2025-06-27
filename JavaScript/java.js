@@ -27,3 +27,16 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
+// Image modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const clickableImages = document.querySelectorAll('.clickable-image');
+    const modalImage = document.getElementById('modalImage');
+    
+    clickableImages.forEach(function(img) {
+        img.addEventListener('click', function() {
+            modalImage.src = this.src;
+            modalImage.alt = this.alt;
+        });
+    });
+});

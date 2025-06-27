@@ -130,3 +130,28 @@ header {
   overflow-y: auto;
   text-align: left; /* makkelijker lezen */
 }
+
+/* Clickable images styling */
+.clickable-image {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.clickable-image:hover {
+    opacity: 0.8;
+}
+
+/* Modal styling */
+#imageModal .modal-content {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#imageModal .modal-body {
+    position: relative;
+}
+
+#imageModal .btn-close {
+    z-index: 1050;
+}
