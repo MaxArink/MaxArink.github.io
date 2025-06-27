@@ -88,124 +88,252 @@
     <section class="container py-4 text-center" id="projects">
         <h1 class="mb-4 px-5 py-2 bg-light fw-bold border border-3 border-dark rounded-5 text-dark">Projects</h1>
         <div class="row justify-content-center g-4">
-            <!-- Herhaal dit blok voor elk project -->
+
+            <!-- Phoenix Bord Game -->
             <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-stretch">
                 <div class="card shadow project-card w-100 text-bg-light border border-3 border-dark rounded-5">
-                    <img src="Images/DePhoenixText.png" class="card-img-top" alt="X">
+                    <div id="carouselProjectPhoenix" class="carousel slide rounded-top">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Images/DePhoenixText.png" class="d-block w-100" alt="Phoenix Image 1">
+                            </div>
+                            <!-- Extra carousel items hier -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjectPhoenix"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Vorige</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjectPhoenix"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Volgende</span>
+                        </button>
+                    </div>
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title h5 fw-bold">Phoenix Bord Game</h2>
-
-                        <!-- <a class="btn btn-info text-white fw-semibold mb-2" href="https://github.com/MaxArink"
-                            target="_blank">Bekijk project</a> -->
-
+                        <p>
+                            Dit is een beschrijving van het Phoenix Bord Game project. Hier kun je details geven over
+                            gameplay, technologieën, uitdagingen en oplossingen. Als deze tekst te lang wordt, kun je
+                            scrollen binnen dit vak.
+                        </p>
                         <div class="dropdown mt-auto">
                             <button class="btn btn-success dropdown-toggle fw-semibold w-100" type="button"
                                 id="downloadDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Download
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="downloadDropdown1">
-                                <!-- <li><a class="dropdown-item" href="ProjectZips/._project.zip" download>Project.(ZIP)</a></li>
-                                <li><a class="dropdown-item" href="BuildZips/._build.zip" download>Build.(ZIP)</a></li> -->
-                                <li><a class="dropdown-item" href="CodeZips/PhoenixScripts.zip" download>Code.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="CodeZips/PhoenixScripts.zip" download>Code.(ZIP)</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Voeg hier meer projecten toe, net als hierboven -->
+            <!-- Unity Platformergame -->
             <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-stretch">
                 <div class="card shadow project-card w-100 text-bg-light border border-3 border-dark rounded-5">
-                    <img src="Images/UnityPlatformerGame.png" class="card-img-top" alt="X">
+                    <div id="carouselProjectPlatformer" class="carousel slide rounded-top">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Images/UnityPlatformerGame.png" class="d-block w-100"
+                                    alt="Platformer Image 1">
+                            </div>
+                            <!-- Extra carousel items hier -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjectPlatformer"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Vorige</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjectPlatformer"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Volgende</span>
+                        </button>
+                    </div>
                     <div class="card-body d-flex flex-column">
-                        <h2 class="card-title h5 fw-bold">UnityPlatformergame</h2>
-
-                        <!-- <a class="btn btn-info text-white fw-semibold mb-2" href="https://github.com/MaxArink"
-                            target="_blank">Bekijk project</a> -->
-
+                        <h2 class="card-title h5 fw-bold">Unity Platformergame</h2>
+                        <p>
+                            Dit project is een platformgame ontwikkeld in Unity, waarin verschillende levels en vijanden
+                            zijn geïmplementeerd. Hier kun je uitgebreid vertellen over je rol en de gebruikte
+                            technieken.
+                        </p>
                         <div class="dropdown mt-auto">
                             <button class="btn btn-success dropdown-toggle fw-semibold w-100" type="button"
                                 id="downloadDropdown2" data-bs-toggle="dropdown" aria-expanded="false">
                                 Download
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="downloadDropdown2">
-                                <!-- <li><a class="dropdown-item" href="ProjectZips/._project.zip" download>NameProject Project.(ZIP)</a></li>
-                                <li><a class="dropdown-item" href="BuildZips/._build.zip" download>NameProject Build.(ZIP)</a></li> -->
-                                <li><a class="dropdown-item" href="CodeZips/UnityPlatformergameScript.zip" download>Code.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="CodeZips/UnityPlatformergameScript.zip"
+                                        download>Code.(ZIP)</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Unity RPG game -->
             <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-stretch">
                 <div class="card shadow project-card w-100 text-bg-light border border-3 border-dark rounded-5">
-                    <img src="Images/UnityRPGgame.png" class="card-img-top" alt="X">
+                    <div id="carouselProjectUnityRPG" class="carousel slide rounded-top">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Images/UnityRPGgame.png" class="d-block w-100" alt="RPG Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/UnityRPGgameGameplay1.png" class="d-block w-100" alt="RPG Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/UnityRPGgameGameplay2.png" class="d-block w-100" alt="RPG Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/UnityRPGgameGameplay3.png" class="d-block w-100" alt="RPG Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/UnityRPGgameCode1.png" class="d-block w-100" alt="RPG Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/UnityRPGgameCode2.png" class="d-block w-100" alt="RPG Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Images/UnityRPGgameCode3.png" class="d-block w-100" alt="RPG Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <video class="d-block w-100" controls>
+                                    <source src="Video/UnityRPGgame.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <!-- Extra carousel items hier -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjectUnityRPG"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Vorige</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjectUnityRPG"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Volgende</span>
+                        </button>
+                    </div>
                     <div class="card-body d-flex flex-column">
-                        <h2 class="card-title h5 fw-bold">UnityRPGgame</h2>
+                        <h2 class="card-title h5 fw-bold">Unity RPG game</h2>
+                        <p><strong>Doel van het Spel</strong><br>
+                            Over het Spel
+                            Dit is een turn-based RPG waarin je een team van unieke helden bestuurt, elk met hun
+                            eigen vaardigheden en strategische rollen.
 
-                        <!-- <a class="btn btn-info text-white fw-semibold mb-2" href="https://github.com/MaxArink"
-                            target="_blank">Bekijk project</a> -->
-
+                            Tijdens het ontwikkelen van dit project heb ik me gericht op het bouwen van herbruikbare
+                            componenten en het implementeren van gameplaymechanieken die zorgen voor uitdagende en
+                            tactische gevechten.</p>
                         <div class="dropdown mt-auto">
                             <button class="btn btn-success dropdown-toggle fw-semibold w-100" type="button"
                                 id="downloadDropdown3" data-bs-toggle="dropdown" aria-expanded="false">
                                 Download
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="downloadDropdown3">
-                                <!-- <li><a class="dropdown-item" href="ProjectZips/._project.zip" download>NameProject Project.(ZIP)</a></li>
-                                <li><a class="dropdown-item" href="BuildZips/._build.zip" download>NameProject Build.(ZIP)</a></li> -->
-                                <li><a class="dropdown-item" href="CodeZips/UnityRPGgameScript.zip" download>Code.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="BuildZips/UnityRPGgameBuild.zip"
+                                        download>Build.(ZIP)</a></li>
+                                <!-- <li><a class="dropdown-item" href="CodeZips/UnityRPGgameScript.zip" download>Code.(ZIP)</a></li> -->
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Project1 (1) -->
             <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-stretch">
                 <div class="card shadow project-card w-100 text-bg-light border border-3 border-dark rounded-5">
-                    <img src="Images/Projectgogbot.jpg" class="card-img-top" alt="X">
+                    <div id="carouselProject1a" class="carousel slide rounded-top">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Images/Projectgogbot.jpg" class="d-block w-100" alt="Project1 Image 1">
+                            </div>
+                            <!-- Extra carousel items hier -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProject1a"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Vorige</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProject1a"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Volgende</span>
+                        </button>
+                    </div>
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title h5 fw-bold">Project1</h2>
-
-                        <!-- <a class="btn btn-info text-white fw-semibold mb-2" href="https://github.com/MaxArink"
-                            target="_blank">Bekijk project</a> -->
-
+                        <p>
+                            Hier kun je jouw projectbeschrijving plaatsen voor Project1. Voeg informatie toe over het
+                            doel, gebruikte tools en wat het project bijzonder maakt.
+                        </p>
                         <div class="dropdown mt-auto">
                             <button class="btn btn-success dropdown-toggle fw-semibold w-100" type="button"
                                 id="downloadDropdown4" data-bs-toggle="dropdown" aria-expanded="false">
                                 Download
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="downloadDropdown4">
-                                <li><a class="dropdown-item" href="ProjectZips/._project.zip" download>NameProject Project.(ZIP)</a></li>
-                                <li><a class="dropdown-item" href="BuildZips/._build.zip" download>NameProject Build.(ZIP)</a></li>
-                                <li><a class="dropdown-item" href="CodeZips/._code.zip" download>NameProject Code.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="ProjectZips/._project.zip" download>NameProject
+                                        Project.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="BuildZips/._build.zip" download>NameProject
+                                        Build.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="CodeZips/._code.zip" download>NameProject
+                                        Code.(ZIP)</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Project2 -->
             <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-stretch">
                 <div class="card shadow project-card w-100 text-bg-light border border-3 border-dark rounded-5">
-                    <img src="Images/Projectgogbot.jpg" class="card-img-top" alt="X">
+                    <div id="carouselProject1b" class="carousel slide rounded-top">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="Images/Projectgogbot.jpg" class="d-block w-100" alt="Project1 Image 2">
+                            </div>
+                            <!-- Extra carousel items hier -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProject1b"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Vorige</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProject1b"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Volgende</span>
+                        </button>
+                    </div>
                     <div class="card-body d-flex flex-column">
-                        <h2 class="card-title h5 fw-bold">Project1</h2>
-
-                        <!-- <a class="btn btn-info text-white fw-semibold mb-2" href="https://github.com/MaxArink"
-                            target="_blank">Bekijk project</a> -->
-
+                        <h2 class="card-title h5 fw-bold">Project2</h2>
+                        <p>
+                            Hier kun je extra info plaatsen over je tweede Project1 kaart. Beschrijf wat anders is of
+                            extra aan dit project.
+                        </p>
                         <div class="dropdown mt-auto">
                             <button class="btn btn-success dropdown-toggle fw-semibold w-100" type="button"
                                 id="downloadDropdown5" data-bs-toggle="dropdown" aria-expanded="false">
                                 Download
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="downloadDropdown5">
-                                <li><a class="dropdown-item" href="ProjectZips/._project.zip" download>NameProject Project.(ZIP)</a></li>
-                                <li><a class="dropdown-item" href="BuildZips/._build.zip" download>NameProject Build.(ZIP)</a></li>
-                                <li><a class="dropdown-item" href="CodeZips/._code.zip" download>NameProject Code.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="ProjectZips/._project.zip" download>NameProject
+                                        Project.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="BuildZips/._build.zip" download>NameProject
+                                        Build.(ZIP)</a></li>
+                                <li><a class="dropdown-item" href="CodeZips/._code.zip" download>NameProject
+                                        Code.(ZIP)</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 

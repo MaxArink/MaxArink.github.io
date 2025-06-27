@@ -125,3 +125,8 @@ header {
   max-width: 1200px;
   margin: 0 auto;
 } */
+.card-body p {
+  max-height: 200px; /* hoogte aanpassen naar wens */
+  overflow-y: auto;
+  text-align: left; /* makkelijker lezen */
+}
