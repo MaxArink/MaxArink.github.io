@@ -1,157 +1,48 @@
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    background-color: #013A6B;
-    background-image: linear-gradient(30deg, #013A6B 30%, #004E95 10%);
-    color: #fff;
-}
+body{margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f5f7fb;color:#222}
+/* HERO */
+header,.hero{min-height:75vh;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('../Images/image.jpg');background-size:cover;background-position:center;color:white;padding:4rem 1rem}
+.hero h1{font-size:4rem;font-weight:700}
+h1,h2,h3,h4,h5{font-weight:700}
+/* NAVBAR */
+.navbar{backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,.1)}
+/* SECTION TITLES */
+.section-title{display:inline-block;padding:.8rem 2rem;background:white;border-radius:50px;box-shadow:0 3px 12px rgba(0,0,0,.08);margin-bottom:2rem}
+/* CONTAINERS */
+#skills,#projects{max-width:1200px;margin:auto;padding:3rem 1rem}
+/* SKILL CARDS */
+#languageOne,#languageTwo,.skill-card{background:white;border-radius:24px;padding:2rem;box-shadow:0 4px 15px rgba(0,0,0,.08);border:none}
+/* PROJECT CARDS */
+.card,.project-card{background:white;border:none;border-radius:24px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08);transition:.3s;height:100%;cursor:pointer}
+.card:hover,.project-card:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.project-card img,.card-img-top{height:220px;width:100%;object-fit:cover}
+.project-card{padding-bottom:1.5rem}
+/* CARD BODY */
+.card-body{padding:1.5rem}.card-body p{max-height:200px;overflow:auto;text-align:left}
+/* BUTTONS */
+.btn{border-radius:12px;padding:10px 20px;font-weight:600}
+/* CONTACT */
+footer{background:#111827;color:white;padding:5rem 0;margin-top:4rem}#contact .bi{transition:.25s;cursor:pointer}#contact .bi:hover{transform:scale(1.15);color:#60a5fa}
+/* PROGRESS */
+.progress{height:12px;border-radius:20px;overflow:hidden;background:#e5e7eb}.progress-bar{border-radius:20px}
+/* BACK TO TOP */
+#back-to-top-btn{display:none;position:fixed;bottom:25px;right:25px;width:60px;height:60px;border-radius:50%;border:none;font-size:24px;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+/* IMAGES */
+.clickable-image{cursor:pointer;transition:.3s}.clickable-image:hover{transform:scale(1.02);opacity:.95}
+/* MODAL */
+#imageModal .modal-content{background:#f5f7fb;border:none;border-radius:24px}#imageModal .btn-close{z-index:999}
+#projectModal .modal-content{background:#f5f7fb;border:none;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+#projectModal .modal-body{padding:0 1.5rem 1.5rem}
+#projectModalCarousel .carousel-inner{border-radius:20px;overflow:hidden;background:#e5e7eb}
+#projectModalCarousel .carousel-item img{width:100%;height:420px;object-fit:cover}
+#projectModalCarousel .carousel-item video{width:100%;height:420px;object-fit:cover;background:#000}
+#projectModalCarousel .carousel-control-prev,#projectModalCarousel .carousel-control-next{width:12%}
+#projectModalCarousel .carousel-indicators{margin-bottom:.75rem}
+.project-meta-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.project-meta-item,.project-extra-box{background:#fff;border-radius:18px;padding:1rem 1.1rem;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+.project-meta-label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;margin-bottom:.35rem;font-weight:700}
+.project-meta-value{font-weight:600;color:#111827}
+.project-extra-box p{margin:0;color:#374151;line-height:1.6}
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-weight: bold;
-}
-
-header {
-    background-image: url('../Images/image.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 3rem 1rem;
-    border-bottom: 3px solid black;
-}
-
-.card-img-top {
-    height: 180px;
-    object-fit: cover;
-    width: 100%;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-}
-
-#back-to-top-btn {
-    display: none;
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
-    z-index: 99;
-    font-size: 1.5rem;
-    background-color: rgba(14, 134, 231, 0.8);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 0.8rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#back-to-top-btn:hover {
-    background-color: rgba(14, 134, 231, 1);
-}
-
-#back-to-top-btn:active {
-    background-color: rgba(128, 128, 128, 0.6);
-}
-
-#languageOne {
-    background-image: linear-gradient(120deg, #83cbf1 55%, #ceebff 45%);
-}
-
-
-#languageTwo {
-    background-image: linear-gradient(240deg, #80e26c 55%, #cdf5c3 45%);
-}
-
-.card {
-    border-radius: 1.5rem;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
-.card-title {
-    min-height: 3rem;
-}
-
-.card .btn {
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-#contact .bi {
-    transition: transform 0.2s ease;
-}
-
-#contact .bi:hover {
-    transform: scale(1.2);
-    color: #34ADFF;
-}
-
-.project-card img {
-    height: 180px;
-    object-fit: cover;
-    width: 100%;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-}
-
-#skills,
-#projects {
-    max-width: 1200px;   /* Limiteert maximale breedte */
-    margin: 0 auto;      /* Centreert de container horizontaal */
-    width: 100%;         /* Laat het wel op kleinere schermen meegroeien */
-    padding: 2rem 1rem;  /* Wat binnenruimte */
-    margin-bottom: 6rem;
-    padding-top: 4rem;
-}
-
-.dropdown {
-    position: relative;
-}
-
-/* .flex-container {
-  display: flex;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-} */
-.card-body p {
-  max-height: 200px; /* hoogte aanpassen naar wens */
-  overflow-y: auto;
-  text-align: left; /* makkelijker lezen */
-}
-
-/* Clickable images styling */
-.clickable-image {
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.clickable-image:hover {
-    opacity: 0.8;
-}
-
-/* Modal styling */
-#imageModal .modal-content {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-#imageModal .modal-body {
-    position: relative;
-}
-
-#imageModal .btn-close {
-    z-index: 1050;
+@media (max-width: 768px){
+	.project-meta-grid{grid-template-columns:1fr}
 }
