@@ -11,11 +11,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold">Portfolio</a>
+            <a class="navbar-brand" href="index.html">Portfolio</a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="#skills">Skills</a>
-                <a class="nav-link" href="#projects">Projects</a>
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link active" href="html/over-mij.html">Over mij</a>
             </div>
         </div>
     </nav>
@@ -26,29 +25,30 @@
             <a href="#projects" class="btn btn-primary btn-lg mt-3">Bekijk mijn werk</a>
         </div>
     </section>
-    <section class="container py-3" id="skills">
+    <section class="container py-3" id="highlights">
         <div class="text-center">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title">Current Quest</h2>
         </div>
         <div class="row g-4">
-            <div class="col-md-6">
-                <div class="skill-card">
-                    <h4>C#</h4>
-                    <div class="progress mb-3"><div class="progress-bar" style="width:80%"></div></div>
-                    <h4>Unity</h4>
-                    <div class="progress mb-3"><div class="progress-bar" style="width:75%"></div></div>
-                    <h4>Python</h4>
-                    <div class="progress"><div class="progress-bar" style="width:55%"></div></div>
+            <div class="col-md-4">
+                <div class="skill-card h-100 highlight-card">
+                    <div class="highlight-icon"><i class="bi bi-controller"></i></div>
+                    <h4>Build the game loop</h4>
+                    <p>Ik werk graag aan systemen die een game echt laten leven: combat, flow en progressie.</p>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="skill-card">
-                    <h4>HTML / CSS</h4>
-                    <div class="progress mb-3"><div class="progress-bar" style="width:45%"></div></div>
-                    <h4>JavaScript</h4>
-                    <div class="progress mb-3"><div class="progress-bar" style="width:30%"></div></div>
-                    <h4>SQL</h4>
-                    <div class="progress"><div class="progress-bar" style="width:25%"></div></div>
+            <div class="col-md-4">
+                <div class="skill-card h-100 highlight-card">
+                    <div class="highlight-icon"><i class="bi bi-stars"></i></div>
+                    <h4>Make it feel polished</h4>
+                    <p>Van UI tot kleine effecten: ik probeer projecten niet alleen werkend, maar ook strak te maken.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="skill-card h-100 highlight-card">
+                    <div class="highlight-icon"><i class="bi bi-laptop"></i></div>
+                    <h4>Experiment and learn</h4>
+                    <p>Nieuwe technieken, prototypes en ideeën testen vind ik het leukste deel van elk project.</p>
                 </div>
             </div>
         </div>
@@ -60,14 +60,14 @@
                 <div class="project-card" role="button" tabindex="0"
                     data-title="Unity RPG Game"
                     data-image="Images/UnityRPGgame.png"
-                    data-images="Images/UnityRPGgame.png|Video/UnityRPGgame.mp4|Images/UnityRPGgameGameplay1.png|Images/UnityRPGgameGameplay2.png|Images/UnityRPGgameGameplay3.png|Images/UnityRPGgameCode1.png|Images/UnityRPGgameCode2.png|Images/UnityRPGgameCode3.png"
+                    data-images="Images/RPG/UnityRPGgame.png|Video/UnityRPGgame.mp4|Images/RPG/UnityRPGgameGameplay1.png|Images/RPG/UnityRPGgameGameplay2.png|Images/RPG/UnityRPGgameGameplay3.png|Images/RPG/UnityRPGgameCode1.png|Images/RPG/UnityRPGgameCode2.png|Images/RPG/UnityRPGgameCode3.png"
                     data-description="Turn based RPG project gebouwd in Unity met gevechten, progressie en een eigen game loop."
-                    data-year="2024"
+                    data-year="2025"
                     data-role="Developer"
-                    data-tools="Unity, C#, Photoshop"
+                    data-tools="Unity, C#"
                     data-extra="De focus lag op combat flow, inventaris en een eigen stijl voor de interface."
                     data-link="BuildZips/UnityRPGgameBuild.zip">
-                    <img src="Images/UnityRPGgame.png" class="w-100">
+                    <img src="Images/RPG/UnityRPGgame.png" class="w-100">
                     <h3 class="mt-3">Unity RPG Game</h3>
                     <p>Turn based RPG project gebouwd in Unity.</p>
                 </div>
@@ -75,14 +75,14 @@
             <div class="col-md-4">
                 <div class="project-card" role="button" tabindex="0"
                     data-title="Platformer Game"
-                    data-image="Images/UnityPlatformerGame.png"
+                    data-image="Images/Platform/UnityPlatformerGame.png"
                     data-description="Een snelle Unity platformer met sprongen, beweging en level-design experimenten."
-                    data-year="2023"
+                    data-year="2025"
                     data-role="Developer"
                     data-tools="Unity, C#"
                     data-extra="Gemaakt als oefening voor movement, timing en level pacing."
                     data-link="#">
-                    <img src="Images/UnityPlatformerGame.png" class="w-100">
+                    <img src="Images/Platform/UnityPlatformerGame.png" class="w-100">
                     <h3 class="mt-3">Platformer Game</h3>
                     <p>Unity platform game project.</p>
                 </div>
@@ -90,16 +90,31 @@
             <div class="col-md-4">
                 <div class="project-card" role="button" tabindex="0"
                     data-title="Phoenix Board Game"
-                    data-image="Images/DePhoenixText.png"
+                    data-image="Images/Phoenix/DePhoenixText.png"
                     data-description="Een bordspelconcept met eigen thema, spelregels en presentatie."
-                    data-year="2023"
-                    data-role="Concept & Design"
-                    data-tools="Research, paper prototype, visual design"
-                    data-extra="De nadruk lag op spelbalans, duidelijke regels en een herkenbare uitstraling."
+                    data-year="2025"
+                    data-role="Developer"
+                    data-tools="Unity, C#, Photoshop"
+                    data-extra="Voor dit project heb ik gewerkt aan de ontwikkeling van de spellogica, waaronder de game loop en het lokale multiplayer-systeem."
                     data-link="#">
-                    <img src="Images/DePhoenixText.png" class="w-100">
+                    <img src="Images/Phoenix/DePhoenixText.png" class="w-100">
                     <h3 class="mt-3">Phoenix Board Game</h3>
                     <p>Board game project.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" role="button" tabindex="0"
+                    data-title="Master Project"
+                    data-image="Images/image.jpg"
+                    data-description=""
+                    data-year="2026"
+                    data-role="Developer & Scrum Master"
+                    data-tools="Unity, C#, Blender"
+                    data-extra="Tijdens dit project heb ik de AI- en gedragslogica van de monsters ontwikkeld voor een game geïnspireerd op Five Nights at Freddy's (FNAF)."
+                    data-link="#">
+                    <img src="Images/Phoenix/DePhoenixText.png" class="w-100">
+                    <h3 class="mt-3">Still Waters II</h3>
+                    <p>Master Game Project</p>
                 </div>
             </div>
         </div>
@@ -107,10 +122,16 @@
     <footer id="contact">
         <div class="container text-center">
             <h2>Contact</h2>
-            <div class="fs-2 mt-3">
-                <i class="bi bi-envelope mx-2"></i>
-                <i class="bi bi-github mx-2"></i>
-                <i class="bi bi-linkedin mx-2"></i>
+            <div class="fs-2 mt-3 contact-links">
+                <button type="button" class="contact-icon-btn" data-copy-email="maxarink2005@gmail.com" aria-label="Kopieer e-mailadres" title="Kopieer e-mailadres">
+                    <i class="bi bi-envelope mx-2"></i>
+                </button>
+                <a class="contact-icon-btn" href="https://github.com/MaxArink" target="_blank" rel="noopener" aria-label="Open GitHub profiel" title="Open GitHub profiel">
+                    <i class="bi bi-github mx-2"></i>
+                </a>
+                <a class="contact-icon-btn" href="https://www.linkedin.com/in/max-arink-5615b42b4/" target="_blank" rel="noopener" aria-label="Open LinkedIn profiel" title="Open LinkedIn profiel">
+                    <i class="bi bi-linkedin mx-2"></i>
+                </a>
             </div>
         </div>
     </footer>

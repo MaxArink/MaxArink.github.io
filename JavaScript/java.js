@@ -14,6 +14,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 window.addEventListener('scroll', () => {
     const btn = document.getElementById("back-to-top-btn");
+    if (!btn) {
+        return;
+    }
+
     if (window.scrollY > 200) {
         btn.style.display = "block";
     } else {
@@ -30,6 +34,20 @@ function scrollToTop() {
 
 // Image modal functionality
 document.addEventListener('DOMContentLoaded', function() {
+    const geboorteDatum = new Date(2005, 4, 5);
+    const today = new Date();
+    let leeftijd = today.getFullYear() - geboorteDatum.getFullYear();
+
+    const maandVerschil = today.getMonth() - geboorteDatum.getMonth();
+    if (maandVerschil < 0 || (maandVerschil === 0 && today.getDate() < geboorteDatum.getDate())) {
+        leeftijd--;
+    }
+
+    const leeftijdElement = document.getElementById('leeftijd') || document.getElementById('leeftijdElement');
+    if (leeftijdElement) {
+        leeftijdElement.textContent = leeftijd;
+    }
+
     const clickableImages = document.querySelectorAll('.clickable-image');
     const modalImage = document.getElementById('modalImage');
     const projectModal = document.getElementById('projectModal');
@@ -179,4 +197,38 @@ document.addEventListener('DOMContentLoaded', function() {
             fillProjectModal(button);
         });
     }
+
+    document.querySelectorAll('[data-copy-email]').forEach(function(button) {
+        button.addEventListener('click', async function() {
+            const email = this.getAttribute('data-copy-email');
+            if (!email) {
+                return;
+            }
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(email);
+                } else {
+                    const tempInput = document.createElement('textarea');
+                    tempInput.value = email;
+                    tempInput.setAttribute('readonly', '');
+                    tempInput.style.position = 'fixed';
+                    tempInput.style.opacity = '0';
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+
+                const originalTitle = this.getAttribute('title') || 'Kopieer e-mailadres';
+                this.setAttribute('title', 'Gekopieerd naar klembord');
+
+                setTimeout(() => {
+                    this.setAttribute('title', originalTitle);
+                }, 1500);
+            } catch (error) {
+                window.prompt('Kopieer dit e-mailadres:', email);
+            }
+        });
+    });
 });
