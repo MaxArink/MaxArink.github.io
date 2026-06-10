@@ -9,6 +9,7 @@ h1,h2,h3,h4,h5{font-weight:700}
 .section-title{display:inline-block;padding:.8rem 2rem;background:white;border-radius:50px;box-shadow:0 3px 12px rgba(0,0,0,.08);margin-bottom:2rem}
 /* CONTAINERS */
 #skills,#projects{max-width:1200px;margin:auto;padding:3rem 1rem}
+.project-controls{padding:1.5rem}
 /* SKILL CARDS */
 #languageOne,#languageTwo,.skill-card{background:white;border-radius:24px;padding:2rem;box-shadow:0 4px 15px rgba(0,0,0,.08);border:none}
 /* PROJECT CARDS */
@@ -16,6 +17,7 @@ h1,h2,h3,h4,h5{font-weight:700}
 .card:hover,.project-card:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(0,0,0,.12)}
 .project-card img,.card-img-top{height:220px;width:100%;object-fit:cover}
 .project-card{padding-bottom:1.5rem}
+.project-item.project-hidden{display:none !important}
 /* CARD BODY */
 .card-body{padding:1.5rem}.card-body p{max-height:200px;overflow:auto;text-align:left}
 /* BUTTONS */

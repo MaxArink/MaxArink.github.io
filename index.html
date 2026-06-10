@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
@@ -27,109 +29,133 @@
     </section>
     <section class="container py-3" id="highlights">
         <div class="text-center">
-            <h2 class="section-title">Current Quest</h2>
+            <h2 class="section-title">Mijn interesses</h2>
         </div>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="skill-card h-100 highlight-card">
                     <div class="highlight-icon"><i class="bi bi-controller"></i></div>
-                    <h4>Build the game loop</h4>
-                    <p>Ik werk graag aan systemen die een game echt laten leven: combat, flow en progressie.</p>
+                    <h4>Gameplay bouwen</h4>
+                    <p>Ik vind het leuk om te werken aan de gameplay en systemen achter een game.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="skill-card h-100 highlight-card">
                     <div class="highlight-icon"><i class="bi bi-stars"></i></div>
-                    <h4>Make it feel polished</h4>
-                    <p>Van UI tot kleine effecten: ik probeer projecten niet alleen werkend, maar ook strak te maken.</p>
+                    <h4>Oog voor detail</h4>
+                    <p>Ik besteed graag aandacht aan details zodat een project er verzorgd uitziet.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="skill-card h-100 highlight-card">
                     <div class="highlight-icon"><i class="bi bi-laptop"></i></div>
-                    <h4>Experiment and learn</h4>
-                    <p>Nieuwe technieken, prototypes en ideeën testen vind ik het leukste deel van elk project.</p>
+                    <h4>Blijven leren</h4>
+                    <p>Ik probeer graag nieuwe dingen uit en leer zo steeds meer bij.</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="container py-3" id="projects">
-        <div class="text-center"><h2 class="section-title">Projects</h2></div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="project-card" role="button" tabindex="0"
-                    data-title="Unity RPG Game"
+        <div class="text-center">
+            <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="skill-card project-controls mb-4">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-5">
+                    <label for="projectSort" class="form-label mb-2">Sorteer op</label>
+                    <select id="projectSort" class="form-select">
+                        <option value="newest">Nieuwste eerst</option>
+                        <option value="oldest">Oudste eerst</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <label for="projectRole" class="form-label mb-2">Rol</label>
+                    <select id="projectRole" class="form-select">
+                        <option value="all">Alle rollen</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" id="projectReset" class="btn btn-outline-secondary w-100">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4" id="projectGrid">
+            <div class="col-md-4 project-item">
+                <div class="project-card" role="button" tabindex="0" data-title="Unity RPG Game"
                     data-image="Images/UnityRPGgame.png"
                     data-images="Images/RPG/UnityRPGgame.png|Video/UnityRPGgame.mp4|Images/RPG/UnityRPGgameGameplay1.png|Images/RPG/UnityRPGgameGameplay2.png|Images/RPG/UnityRPGgameGameplay3.png|Images/RPG/UnityRPGgameCode1.png|Images/RPG/UnityRPGgameCode2.png|Images/RPG/UnityRPGgameCode3.png"
                     data-description="Turn based RPG project gebouwd in Unity met gevechten, progressie en een eigen game loop."
-                    data-year="2025"
-                    data-role="Developer"
-                    data-tools="Unity, C#"
+                    data-year="2025" data-role="Developer" data-tools="Unity, C#"
                     data-extra="De focus lag op combat flow, inventaris en een eigen stijl voor de interface."
-                    data-link="BuildZips/UnityRPGgameBuild.zip">
+                    data-build=""
+                    data-repo="https://github.com/MaxArink/UnityRPGGame">
                     <img src="Images/RPG/UnityRPGgame.png" class="w-100">
                     <h3 class="mt-3">Unity RPG Game</h3>
                     <p>Turn based RPG project gebouwd in Unity.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="project-card" role="button" tabindex="0"
-                    data-title="Platformer Game"
+            
+            <div class="col-md-4 project-item">
+                <div class="project-card" role="button" tabindex="0" data-title="Platformer Game"
                     data-image="Images/Platform/UnityPlatformerGame.png"
                     data-description="Een snelle Unity platformer met sprongen, beweging en level-design experimenten."
-                    data-year="2025"
-                    data-role="Developer"
-                    data-tools="Unity, C#"
+                    data-year="2025" data-role="Developer" data-tools="Unity, C#"
                     data-extra="Gemaakt als oefening voor movement, timing en level pacing."
-                    data-link="#">
+                    data-build=""
+                    data-repo="https://github.com/MaxArink/UnityPlatformerProject">
                     <img src="Images/Platform/UnityPlatformerGame.png" class="w-100">
                     <h3 class="mt-3">Platformer Game</h3>
                     <p>Unity platform game project.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="project-card" role="button" tabindex="0"
-                    data-title="Phoenix Board Game"
+            
+            <div class="col-md-4 project-item">
+                <div class="project-card" role="button" tabindex="0" data-title="Phoenix Board Game"
                     data-image="Images/Phoenix/DePhoenixText.png"
-                    data-description="Een bordspelconcept met eigen thema, spelregels en presentatie."
+                    data-description="Voor dit project heb ik gewerkt aan de ontwikkeling van de spellogica, waaronder de game loop en het lokale multiplayer-systeem." 
                     data-year="2025"
-                    data-role="Developer"
-                    data-tools="Unity, C#, Photoshop"
-                    data-extra="Voor dit project heb ik gewerkt aan de ontwikkeling van de spellogica, waaronder de game loop en het lokale multiplayer-systeem."
-                    data-link="#">
+                    data-role="Developer" data-tools="Unity, C#, Photoshop"
+                    data-extra=""
+                    data-build=""
+                    data-repo="">
                     <img src="Images/Phoenix/DePhoenixText.png" class="w-100">
                     <h3 class="mt-3">Phoenix Board Game</h3>
                     <p>Board game project.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="project-card" role="button" tabindex="0"
-                    data-title="Master Project"
-                    data-image="Images/image.jpg"
-                    data-description=""
-                    data-year="2026"
-                    data-role="Developer & Scrum Master"
-                    data-tools="Unity, C#, Blender"
-                    data-extra="Tijdens dit project heb ik de AI- en gedragslogica van de monsters ontwikkeld voor een game geïnspireerd op Five Nights at Freddy's (FNAF)."
-                    data-link="#">
-                    <img src="Images/Phoenix/DePhoenixText.png" class="w-100">
+            
+            <div class="col-md-4 project-item">
+                <div class="project-card" role="button" tabindex="0" data-title="Master Project"
+                    data-image="video/Stillwaters2.mp4"
+                    data-description="Tijdens dit project heb ik de AI- en gedragslogica van de monsters ontwikkeld voor een game geïnspireerd op Five Nights at Freddy's (FNAF)."
+                    data-year="2026" data-role="Developer & Game Artist" data-tools="Unity, C#, Blender"
+                    data-extra="Deze game is gezamenlijk ontwikkeld als eindproject voor het ROC van Twente. Tijdens dit project heb ik veel nieuwe vaardigheden opgedaan, zowel binnen softwareontwikkeling als daarbuiten. Zo heb ik geleerd om met Blender te werken en heb ik het krabmodel in de game zelf ontworpen en gemodelleerd."
+                    data-build="BuildZips/MasterProjectV0.2.0.zip"
+                    data-repo="">
+                    <img src="Images/Stillwaters2/Stillwaters2.png" class="w-100">
                     <h3 class="mt-3">Still Waters II</h3>
                     <p>Master Game Project</p>
                 </div>
             </div>
+        </div>
+        <div class="text-center mt-4 d-none" id="projectsShowMoreWrap">
+            <button type="button" id="projectsShowMoreBtn" class="btn btn-primary btn-lg">Toon meer</button>
         </div>
     </section>
     <footer id="contact">
         <div class="container text-center">
             <h2>Contact</h2>
             <div class="fs-2 mt-3 contact-links">
-                <button type="button" class="contact-icon-btn" data-copy-email="maxarink2005@gmail.com" aria-label="Kopieer e-mailadres" title="Kopieer e-mailadres">
+                <button type="button" class="contact-icon-btn" data-copy-email="maxarink2005@gmail.com"
+                    aria-label="Kopieer e-mailadres" title="Kopieer e-mailadres">
                     <i class="bi bi-envelope mx-2"></i>
                 </button>
-                <a class="contact-icon-btn" href="https://github.com/MaxArink" target="_blank" rel="noopener" aria-label="Open GitHub profiel" title="Open GitHub profiel">
+                <a class="contact-icon-btn" href="https://github.com/MaxArink" target="_blank" rel="noopener"
+                    aria-label="Open GitHub profiel" title="Open GitHub profiel">
                     <i class="bi bi-github mx-2"></i>
                 </a>
-                <a class="contact-icon-btn" href="https://www.linkedin.com/in/max-arink-5615b42b4/" target="_blank" rel="noopener" aria-label="Open LinkedIn profiel" title="Open LinkedIn profiel">
+                <a class="contact-icon-btn" href="https://www.linkedin.com/in/max-arink-5615b42b4/" target="_blank"
+                    rel="noopener" aria-label="Open LinkedIn profiel" title="Open LinkedIn profiel">
                     <i class="bi bi-linkedin mx-2"></i>
                 </a>
             </div>
@@ -146,11 +172,13 @@
                     <div id="projectModalCarousel" class="carousel slide mb-3" data-bs-ride="false">
                         <div class="carousel-indicators" id="projectModalIndicators"></div>
                         <div class="carousel-inner" id="projectModalCarouselInner"></div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#projectModalCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectModalCarousel"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Vorige</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#projectModalCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectModalCarousel"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Volgende</span>
                         </button>
@@ -174,7 +202,11 @@
                         <span class="project-meta-label">Extra info</span>
                         <p id="projectModalExtra" class="mb-0"></p>
                     </div>
-                    <a id="projectModalLink" class="btn btn-primary" href="#" target="_blank" rel="noopener">Download / Bekijk</a>
+                    <div id="projectModalActions" class="d-flex flex-wrap gap-3">
+                        <a id="projectModalBuildLink" class="btn btn-primary" href="#">Download build</a>
+                        <a id="projectModalRepoLink" class="btn btn-outline-dark" href="#" target="_blank"
+                            rel="noopener">Git repo</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,4 +214,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JavaScript/java.js"></script>
 </body>
+
 </html>

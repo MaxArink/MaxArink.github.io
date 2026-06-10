@@ -48,6 +48,156 @@ document.addEventListener('DOMContentLoaded', function() {
         leeftijdElement.textContent = leeftijd;
     }
 
+    const projectGrid = document.getElementById('projectGrid');
+    const projectSortSelect = document.getElementById('projectSort');
+    const projectRoleSelect = document.getElementById('projectRole');
+    const projectResetButton = document.getElementById('projectReset');
+    const projectsShowMoreWrap = document.getElementById('projectsShowMoreWrap');
+    const projectsShowMoreBtn = document.getElementById('projectsShowMoreBtn');
+    const projectLimit = 6;
+    let projectsExpanded = false;
+
+    const projectItems = projectGrid
+        ? Array.from(projectGrid.querySelectorAll('.project-item'))
+        : [];
+    const originalProjectOrder = new Map(projectItems.map(function(item, index) {
+        return [item, index];
+    }));
+
+    function getProjectCard(item) {
+        return item ? item.querySelector('.project-card') : null;
+    }
+
+    function getProjectYear(item) {
+        const card = getProjectCard(item);
+        const year = card ? Number(card.getAttribute('data-year')) : NaN;
+        return Number.isFinite(year) ? year : 0;
+    }
+
+    function getProjectRole(item) {
+        const card = getProjectCard(item);
+        return card ? (card.getAttribute('data-role') || '').trim() : '';
+    }
+
+    function getProjectRoles(item) {
+        const roleStr = getProjectRole(item);
+        if (!roleStr) return [];
+        return roleStr.split(/\s*(?:&|,|\||\/|and)\s*/i).map(function(r) { return r.trim(); }).filter(Boolean);
+    }
+
+    function fillProjectRoleOptions() {
+        if (!projectRoleSelect || projectItems.length === 0) {
+            return;
+        }
+
+        const existingValues = new Set(Array.from(projectRoleSelect.options).map(function(option) {
+            return option.value;
+        }));
+        const roles = Array.from(new Set(projectItems.flatMap(getProjectRoles))).filter(Boolean)
+            .sort(function(a, b) {
+                return a.localeCompare(b, 'nl');
+            });
+
+        roles.forEach(function(role) {
+            if (existingValues.has(role)) {
+                return;
+            }
+
+            const option = document.createElement('option');
+            option.value = role;
+            option.textContent = role;
+            projectRoleSelect.appendChild(option);
+        });
+    }
+
+    function updateProjectsShowMoreButton(visibleProjectCount) {
+        if (!projectsShowMoreWrap || !projectsShowMoreBtn) {
+            return;
+        }
+
+        const needsToggle = visibleProjectCount > projectLimit;
+        projectsShowMoreWrap.classList.toggle('d-none', !needsToggle);
+        projectsShowMoreBtn.textContent = projectsExpanded ? 'Toon minder' : 'Toon meer';
+        projectsShowMoreBtn.setAttribute('aria-expanded', String(projectsExpanded));
+    }
+
+    function applyProjectFilters() {
+        if (!projectGrid || projectItems.length === 0) {
+            return;
+        }
+
+        const sortValue = projectSortSelect ? projectSortSelect.value : 'newest';
+        const selectedRole = projectRoleSelect ? projectRoleSelect.value : 'all';
+
+        const filteredItems = projectItems.filter(function(item) {
+            if (selectedRole === 'all') {
+                return true;
+            }
+
+            return getProjectRoles(item).some(function(r) { return r === selectedRole; });
+        });
+
+        const sortedItems = filteredItems.slice().sort(function(a, b) {
+            const yearDiff = getProjectYear(a) - getProjectYear(b);
+            if (yearDiff !== 0) {
+                return sortValue === 'oldest' ? yearDiff : -yearDiff;
+            }
+
+            return (originalProjectOrder.get(a) || 0) - (originalProjectOrder.get(b) || 0);
+        });
+
+        sortedItems.forEach(function(item) {
+            projectGrid.appendChild(item);
+        });
+
+        projectItems.forEach(function(item) {
+            item.classList.add('project-hidden');
+        });
+
+        sortedItems.forEach(function(item, index) {
+            const shouldShow = projectsExpanded || index < projectLimit;
+            item.classList.toggle('project-hidden', !shouldShow);
+        });
+
+        updateProjectsShowMoreButton(sortedItems.length);
+    }
+
+    if (projectSortSelect) {
+        projectSortSelect.addEventListener('change', function() {
+            applyProjectFilters();
+        });
+    }
+
+    if (projectRoleSelect) {
+        projectRoleSelect.addEventListener('change', function() {
+            applyProjectFilters();
+        });
+    }
+
+    if (projectResetButton) {
+        projectResetButton.addEventListener('click', function() {
+            if (projectSortSelect) {
+                projectSortSelect.value = 'newest';
+            }
+
+            if (projectRoleSelect) {
+                projectRoleSelect.value = 'all';
+            }
+
+            projectsExpanded = false;
+            applyProjectFilters();
+        });
+    }
+
+    if (projectsShowMoreBtn) {
+        projectsShowMoreBtn.addEventListener('click', function() {
+            projectsExpanded = !projectsExpanded;
+            applyProjectFilters();
+        });
+    }
+
+    fillProjectRoleOptions();
+
     const clickableImages = document.querySelectorAll('.clickable-image');
     const modalImage = document.getElementById('modalImage');
     const projectModal = document.getElementById('projectModal');
@@ -58,7 +208,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalRole = document.getElementById('projectModalRole');
     const modalTools = document.getElementById('projectModalTools');
     const modalExtra = document.getElementById('projectModalExtra');
-    const modalLink = document.getElementById('projectModalLink');
+    const modalActions = document.getElementById('projectModalActions');
+    const modalBuildLink = document.getElementById('projectModalBuildLink');
+    const modalRepoLink = document.getElementById('projectModalRepoLink');
     const modalCarousel = document.getElementById('projectModalCarousel');
     const modalCarouselInner = document.getElementById('projectModalCarouselInner');
     const modalIndicators = document.getElementById('projectModalIndicators');
@@ -141,7 +293,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const role = source.getAttribute('data-role') || '-';
         const tools = source.getAttribute('data-tools') || '-';
         const extra = source.getAttribute('data-extra') || '-';
-        const link = source.getAttribute('data-link') || '#';
+        const buildLink = source.getAttribute('data-build') || source.getAttribute('data-link') || '';
+        const repoLink = source.getAttribute('data-repo') || '';
         const images = (source.getAttribute('data-images') || source.getAttribute('data-image') || '')
             .split('|')
             .map(function(image) { return image.trim(); });
@@ -153,10 +306,61 @@ document.addEventListener('DOMContentLoaded', function() {
         modalRole.textContent = role;
         modalTools.textContent = tools;
         modalExtra.textContent = extra;
-        modalLink.href = link;
-        modalLink.textContent = link === '#' ? 'Geen download beschikbaar' : 'Download / Bekijk';
-        modalLink.classList.toggle('disabled', link === '#');
-        modalLink.setAttribute('aria-disabled', link === '#');
+        if (modalBuildLink) {
+            const hasBuildLink = Boolean(buildLink);
+            modalBuildLink.href = hasBuildLink ? buildLink : '#';
+            modalBuildLink.textContent = hasBuildLink ? 'Download build' : 'Geen build beschikbaar';
+            modalBuildLink.classList.toggle('disabled', !hasBuildLink);
+            modalBuildLink.setAttribute('aria-disabled', String(!hasBuildLink));
+            if (hasBuildLink) {
+                modalBuildLink.setAttribute('download', '');
+            } else {
+                modalBuildLink.removeAttribute('download');
+            }
+        }
+
+        if (modalRepoLink) {
+            const hasRepoLink = Boolean(repoLink);
+            modalRepoLink.href = hasRepoLink ? repoLink : '#';
+            modalRepoLink.textContent = hasRepoLink ? 'Git repo' : 'Geen repo beschikbaar';
+            modalRepoLink.classList.toggle('disabled', !hasRepoLink);
+            modalRepoLink.setAttribute('aria-disabled', String(!hasRepoLink));
+            modalRepoLink.removeAttribute('download');
+        }
+    }
+
+    if (modalBuildLink) {
+        modalBuildLink.addEventListener('click', function(event) {
+            const href = modalBuildLink.getAttribute('href') || '';
+            const isAvailable = href && href !== '#';
+            if (!isAvailable) {
+                event.preventDefault();
+                return;
+            }
+
+            event.preventDefault();
+            const downloadLink = document.createElement('a');
+            downloadLink.href = href;
+            downloadLink.download = '';
+            downloadLink.rel = 'noopener';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        });
+    }
+
+    if (modalRepoLink) {
+        modalRepoLink.addEventListener('click', function(event) {
+            const href = modalRepoLink.getAttribute('href') || '';
+            const isAvailable = href && href !== '#';
+            if (!isAvailable) {
+                event.preventDefault();
+                return;
+            }
+
+            event.preventDefault();
+            window.open(href, '_blank', 'noopener');
+        });
     }
 
     function openProjectModal(source) {
@@ -187,6 +391,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    applyProjectFilters();
 
     if (projectModal) {
         projectModal.addEventListener('show.bs.modal', function(event) {
