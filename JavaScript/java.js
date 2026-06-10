@@ -93,10 +93,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const existingValues = new Set(Array.from(projectRoleSelect.options).map(function(option) {
             return option.value;
         }));
-        const roles = Array.from(new Set(projectItems.flatMap(getProjectRoles))).filter(Boolean)
-            .sort(function(a, b) {
-                return a.localeCompare(b, 'nl');
+        const roleSet = new Set();
+        projectItems.forEach(function(item) {
+            getProjectRoles(item).forEach(function(role) {
+                roleSet.add(role);
             });
+        });
+
+        const roles = Array.from(roleSet).filter(Boolean).sort(function(a, b) {
+            return a.localeCompare(b, 'nl');
+        });
 
         roles.forEach(function(role) {
             if (existingValues.has(role)) {
@@ -314,8 +320,12 @@ document.addEventListener('DOMContentLoaded', function() {
             modalBuildLink.setAttribute('aria-disabled', String(!hasBuildLink));
             if (hasBuildLink) {
                 modalBuildLink.setAttribute('download', '');
+                modalBuildLink.removeAttribute('target');
+                modalBuildLink.removeAttribute('rel');
             } else {
                 modalBuildLink.removeAttribute('download');
+                modalBuildLink.removeAttribute('target');
+                modalBuildLink.removeAttribute('rel');
             }
         }
 
@@ -326,41 +336,14 @@ document.addEventListener('DOMContentLoaded', function() {
             modalRepoLink.classList.toggle('disabled', !hasRepoLink);
             modalRepoLink.setAttribute('aria-disabled', String(!hasRepoLink));
             modalRepoLink.removeAttribute('download');
+            if (hasRepoLink) {
+                modalRepoLink.setAttribute('target', '_blank');
+                modalRepoLink.setAttribute('rel', 'noopener');
+            } else {
+                modalRepoLink.removeAttribute('target');
+                modalRepoLink.removeAttribute('rel');
+            }
         }
-    }
-
-    if (modalBuildLink) {
-        modalBuildLink.addEventListener('click', function(event) {
-            const href = modalBuildLink.getAttribute('href') || '';
-            const isAvailable = href && href !== '#';
-            if (!isAvailable) {
-                event.preventDefault();
-                return;
-            }
-
-            event.preventDefault();
-            const downloadLink = document.createElement('a');
-            downloadLink.href = href;
-            downloadLink.download = '';
-            downloadLink.rel = 'noopener';
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-        });
-    }
-
-    if (modalRepoLink) {
-        modalRepoLink.addEventListener('click', function(event) {
-            const href = modalRepoLink.getAttribute('href') || '';
-            const isAvailable = href && href !== '#';
-            if (!isAvailable) {
-                event.preventDefault();
-                return;
-            }
-
-            event.preventDefault();
-            window.open(href, '_blank', 'noopener');
-        });
     }
 
     function openProjectModal(source) {
